@@ -1,0 +1,56 @@
+/* Hamburger Button Styles */
+.hamburger {
+    cursor: pointer;
+}
+
+/* Side Panel Styles */
+.side-panel {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--color-soft-beige);
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 1001;
+    color: var(--color-text);
+    padding-top: 60px;
+}
+
+.side-panel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: var(--color-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.side-panel .side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-panel .side-nav ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ccc; /* Thin grey line between items */
+}
+
+.side-panel .side-nav ul li a {
+    padding: 15px 20px; /* Space inside each link */
+    color: var(--color-text);
+    text-decoration: none;
+    display: block; /* Make the anchor take full width */
+    transition: color 0.3s ease;
+}
+
+/* Show the side panel when active */
+.side-panel.open {
+    width: 90vw; /* Adjust width as needed */
+    
+}

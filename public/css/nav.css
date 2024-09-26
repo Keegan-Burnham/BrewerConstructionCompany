@@ -1,0 +1,279 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    background-color: var(--color-sage-green);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background-color: rgba(226, 232, 225, 0.6); /* Reduced opacity */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.flexbox-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.quick-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 2.5em;
+    margin: 0;
+    padding: 0;
+    margin-left: 2em;
+    margin-top: 2.5em;
+}
+
+/* Styling each Quick Link */
+.quick-links li {
+    position: relative;
+}
+
+/* Separator line between quick links */
+.quick-links li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px; /* Adjusts position to ensure the line shows correctly */
+    transform: translateY(-50%);
+    width: 2px;
+    height: 80%;
+    background-color: #A9A9A9; /* Subtle light gray line */
+    opacity: 0.6; /* Makes the line slightly more visible */
+}
+
+nav img {
+    width: 150px;
+    height: auto;
+    flex: 1;
+}
+
+.logo-flexbox {
+    margin-left: 2em; /* Removes additional margin */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+/* Navigation links as buttons */
+.flexbox-nav ul li a.nav-link {
+    display: block;
+    width: 90px; /* Adjust width as needed */
+    height: 60px; /* Adjust height as needed */
+    line-height: 60px; /* Center text vertically */
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-text);
+    border-radius: 4px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+
+nav a.nav-link:hover {
+    background-color: var(--color-light-gray-hover);
+    color: var(--color-text);
+}
+
+/* Outer box for the label */
+.outer-box {
+    display: flex;
+    align-items: center; /* Vertically align label */
+    margin-right: 4em;
+    margin-top: 2em;
+}
+
+/* Inner box for the label */
+.inner-box {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text horizontally */
+    padding: 10px;
+}
+
+/* Styling for the label */
+.trustworthy-craftmanship-label {
+    display: inline;
+    font-weight: bold; /* Bold text */
+    color: #333; /* Adjust color as needed */
+}
+
+/* Base styles for Trustworthy Craftsmanship label */
+.outer-box {
+    display: inline-block; /* Ensure outer box wraps around the content */
+    padding: 1px; /* Space between the inner and outer border */
+    border: 2px solid #333; /* Inner border: adjust thickness and color */
+}
+
+.inner-box {
+    display: inline-block; /* Ensure inner box wraps around the content */
+    padding: 4px; /* Space between the text and the inner border */
+    border: 3px solid #333; /* Outer border: adjust thickness and color */
+}
+
+.trustworthy-craftmanship-label {
+    display: inline; /* Display label inline */
+    padding: 5px; /* Padding inside the label */
+    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+}
+
+
+/* Hamburger Button Styles */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Side Panel Styles */
+.side-panel {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--color-soft-beige);
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 1001;
+    color: var(--color-text);
+    padding-top: 60px;
+}
+
+.side-panel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: var(--color-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.side-panel .side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-panel .side-nav ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ccc; /* Thin grey line between items */
+}
+
+.side-panel .side-nav ul li a {
+    padding: 15px 20px; /* Space inside each link */
+    color: var(--color-text);
+    text-decoration: none;
+    display: block; /* Make the anchor take full width */
+    transition: color 0.3s ease;
+}
+
+/* Show the side panel when active */
+.side-panel.open {
+    width: 90vw; /* Adjust width as needed */
+    
+}
+
+.hamburger.hide {
+    display: none;
+}
+
+/* Side Panel Overlay */
+.side-panel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Below side panel */
+    display: none; /* Initially hidden */
+}
+
+/* Show the overlay when side panel is active */
+.side-panel.open + .side-panel-overlay {
+    display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 1023px) {
+
+    .hamburger {
+        display: block; /* Shows hamburger on smaller screens */
+        position: relative; /* Keeps the hamburger inline */
+        margin-left: auto;
+        margin-right: 1.5em;
+    }
+
+    .logo-flexbox {
+        margin-left: -1.5em;
+        padding: 0;
+        flex: 1;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px auto;
+        transition: 0.3s;
+    }
+
+    .logo-flexbox {
+        margin-right: auto;
+    }
+
+    .quick-links {
+        display: none;
+    }
+
+    .inner-box, .outer-box, .trustworthy-craftmanship-label {
+        display: none;
+    }
+
+    .flexbox-nav {
+        display: flex; /* Changed from block to flex */
+        align-items: center; /* Vertically centers the logo and hamburger */
+        justify-content: space-between; /* Ensures logo is on the left and hamburger is on the right */
+        padding: 10px 20px; /* Optional: Adjust padding as needed */
+    }
+
+}
+
+
+/* Media query for laptops */
+@media (min-width: 1024px) and (max-width: 1100px) {
+
+    .inner-box, .outer-box, .trustworthy-craftmanship-label {
+        display: none;
+    }
+
+    .flexbox-nav ul li a.nav-link {
+        width: 80px; /* Adjust width for laptops */
+        height: 50px; /* Adjust height for laptops */
+        line-height: 50px; /* Adjust line-height for vertical centering */
+        margin: 0;
+    }
+
+    ul li:last-child {
+        margin-right: 7em;
+    }
+
+
+    
+}
